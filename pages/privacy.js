@@ -17,7 +17,7 @@ export default function PrivacyPolicy() {
                                 <div className="privacy-content">
                                     <p><strong>Effective Date:</strong> January 01, 2025</p>
                                     <p><strong>Last Updated:</strong> March 07, 2025</p>
-                                    <p><strong>Contact:</strong> <a href="mailto:info@speedycredentialing.com">info@speedycredentialing.com</a></p>
+                                    <p><strong>Contact:</strong> <a href="mailto:Medjaafsolutions@gmail.com">Medjaafsolutions@gmail.com</a></p>
 
                                     <p>
                                         Med Jaff (“we,” “our,” or “us”) is dedicated to safeguarding your privacy and protecting your personal information. This Privacy Policy outlines the types of information we collect, how we use it, and the measures we take to ensure its security. By using our services, you agree to the terms of this Privacy Policy.
@@ -58,7 +58,7 @@ export default function PrivacyPolicy() {
 
                                     <h6>7. Contact Us</h6>
                                     <p>
-                                        If you have any questions about this Privacy Policy, please contact us at <a href="mailto:info@speedycredentialing.com">info@speedycredentialing.com</a>.
+                                        If you have any questions about this Privacy Policy, please contact us at <a href="mailto:Medjaafsolutions@gmail.com">Medjaafsolutions@gmail.com</a>.
                                     </p>
 
                                     <h4>Cookie Policy</h4>
@@ -91,7 +91,7 @@ export default function PrivacyPolicy() {
 
                                     <h6>6. Contact Us</h6>
                                     <p>
-                                        If you have any questions about our Cookie Policy, please contact us at <a href="mailto:info@speedycredentialing.com">info@speedycredentialing.com</a>.
+                                        If you have any questions about our Cookie Policy, please contact us at <a href="mailto:Medjaafsolutions@gmail.com">Medjaafsolutions@gmail.com</a>.
                                     </p>
 
                                     <p>
