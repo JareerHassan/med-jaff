@@ -1,6 +1,32 @@
+import React, { useRef } from "react";
 import Layout from "@/components/layout/Layout"
 import Link from "next/link"
+import emailjs from "emailjs-com";
+
 export default function Contact() {
+
+    const form = useRef();
+
+    const sendEmail = (e) => {
+        e.preventDefault(); // page reload na ho
+
+        emailjs.sendForm(
+            "service_u7pfuks",
+            "template_hjrw59o",
+            form.current,
+            "mQdo9952t4gywGK5m"
+        ).then(
+            (result) => {
+                console.log(result.text);
+                alert("Message sent successfully!");
+            },
+            (error) => {
+                console.log(error.text);
+                alert("An error occurred, please try again.");
+            }
+        );
+    };
+
 
     return (
         <>
@@ -85,12 +111,8 @@ export default function Contact() {
                                 {/*-============spacing==========-*/}
                                 <div className="social-icons">
                                     <ul>
-                                        <li><Link href="#" className="m_icon"> <i className="fab fa-facebook" />
-                                        </Link></li>
-                                        <li><Link href="#" className="m_icon"> <i className="fab fa-twitter" />
-                                        </Link></li>
-                                        <li><Link href="#" className="m_icon"> <i className="fab fa-skype" />
-                                        </Link></li>
+
+
                                         <li><Link href="#" className="m_icon"> <i className="fab fa-instagram" />
                                         </Link></li>
                                     </ul>
@@ -102,7 +124,7 @@ export default function Contact() {
                             <div className="col-lg-8 col-md-12">
                                 <section className="contact_form_box_all">
                                     <div className="contact_form_shortcode">
-                                        <form id="contact-form" method="post" action="contact.php" role="form">
+                                        <form ref={form} onSubmit={sendEmail} id="contact-form">
                                             <div className="messages" />
                                             <div className="controls">
                                                 <div className="row">
@@ -227,35 +249,70 @@ export default function Contact() {
 
                                                     <div className="col-sm-12">
                                                         <p className="mb-2 pt-3">Preferred Form of Communication *</p>
+
                                                         <div className="form-check form-check-inline">
-                                                            <input className="form-check-input" type="checkbox" name="preferred_communication" id="comm_email" value="Email" style={{ padding: '10px' }} />
+                                                            <input
+                                                                className="form-check-input"
+                                                                type="radio"
+                                                                name="preferred_communication"
+                                                                id="comm_email"
+                                                                value="Email"
+                                                                style={{ padding: '10px' }}
+                                                            />
                                                             <label className="form-check-label" htmlFor="comm_email">Email</label>
                                                         </div>
+
                                                         <div className="form-check form-check-inline">
-                                                            <input className="form-check-input" type="checkbox" name="preferred_communication" id="comm_call" value="Call Me" style={{ padding: '10px' }} />
+                                                            <input
+                                                                className="form-check-input"
+                                                                type="radio"
+                                                                name="preferred_communication"
+                                                                id="comm_call"
+                                                                value="Call Me"
+                                                                style={{ padding: '10px' }}
+                                                            />
                                                             <label className="form-check-label" htmlFor="comm_call">Call Me</label>
                                                         </div>
+
                                                         <div className="form-check form-check-inline">
-                                                            <input className="form-check-input" type="checkbox" name="preferred_communication" id="comm_text" value="Text Message" style={{ padding: '10px' }} />
+                                                            <input
+                                                                className="form-check-input"
+                                                                type="radio"
+                                                                name="preferred_communication"
+                                                                id="comm_text"
+                                                                value="Text Message"
+                                                                style={{ padding: '10px' }}
+                                                            />
                                                             <label className="form-check-label" htmlFor="comm_text">Text Message</label>
                                                         </div>
                                                     </div>
 
 
+                                                    {/* Specialty Input - Name badal kar 'user_specialty' kar diya */}
                                                     <div className="col-md-12 col-sm-12">
                                                         <div className="form-group">
-                                                            <input type="tel" name="Specialty" placeholder="Specialty *" required="required" data-error="Specialty" />
+                                                            <input
+                                                                type="text"
+                                                                name="user_specialty"
+                                                                placeholder="Specialty *"
+                                                                required="required"
+                                                            />
                                                             <div className="help-block with-errors" />
                                                         </div>
                                                     </div>
 
+                                                    {/* Message Textarea - Name badal kar 'user_message' kar diya */}
                                                     <div className="col-sm-12">
                                                         <div className="form-group">
-                                                            <textarea name="specialty" placeholder="How can we help you? *" rows={4} required="required" data-error="Please tell us how we can help you."></textarea>
+                                                            <textarea
+                                                                name="user_message"
+                                                                placeholder="How can we help you? *"
+                                                                rows={4}
+                                                                required="required"
+                                                            ></textarea>
                                                             <div className="help-block with-errors" />
                                                         </div>
                                                     </div>
-
 
 
 
@@ -280,7 +337,10 @@ export default function Contact() {
 
                                                     <div className="col-sm-12">
                                                         <div className="form-group mg_top apbtn">
-                                                            <button className="theme_btn" type="submit">Get a Complementary Analysis</button>
+                                                            <button style={{
+                                                                position: "relative",
+                                                                zIndex: 9999,
+                                                            }} className="theme_btn" type="submit">Get a Complementary Analysis</button>
                                                         </div>
                                                     </div>
                                                 </div>
