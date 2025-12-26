@@ -152,6 +152,13 @@ export default function Sidebar() {
                                 </span>
                             </Link>
                         </li>
+                         <li className="menu-item nav-item">
+                            <Link href="/virtual-appointment" className="nav_link">
+                                <span className="text-link">
+                                  Virtual Appointment 
+                                </span>
+                            </Link>
+                        </li>
                         {/* <li className="menu-item nav-item">
                             <Link href="/service-style-4" className="nav_link">
                                 <span className="text-link">

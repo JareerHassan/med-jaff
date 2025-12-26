@@ -19,7 +19,7 @@ export default function Footer4({ }) {
                         </div>
                         <div className="theme_btn_all">
                             <Link href="/contact" className="theme_btn">
-                                Track Your Claim <span> <i className=" fi-rr-arrow-small-up" /></span>
+                                Get A Quote <span> <i className=" fi-rr-arrow-small-up" /></span>
                             </Link>
                         </div>
                         <div className="d-flex align-items-center contact_header_one">
@@ -81,10 +81,11 @@ export default function Footer4({ }) {
                                     <li>
                                         <div className="d-flex align-items-center">
                                             <div className="icon trans" />
-                                            <Link className="links color_white" href="/compliance">
-                                                Compliance </Link>
+                                            <Link className="links color_white" href="/faqs">
+                                                   FAQ’s </Link>
                                         </div>
                                     </li>
+                    
                                     <li>
                                         <div className="d-flex align-items-center">
                                             <div className="icon trans" />
@@ -106,7 +107,7 @@ export default function Footer4({ }) {
                             <div className="col-lg-5" >
                                 <div className="logo_box" >
                                     <Link href="/" className="logo navbar-brand" >
-                                        <img style={{height:'50px'}} src="/assets/images/logo1.png" alt="Medjaff" className="logo_default" />
+                                        <img style={{ height: '50px' }} src="/assets/images/logo1.png" alt="Medjaff" className="logo_default" />
                                     </Link>
                                 </div>
                             </div>

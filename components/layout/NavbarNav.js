@@ -63,11 +63,11 @@ export default function NavbarNav() {
                     {/* <div className="dropdown-btn"><span className="fa fa-angle-down" /></div> */}
                 </li>
                 <li className="menu-item  menu-item-has-children dropdown  mennucolumn_ nav-item">
-                     <Link href="/about-us" className="nav_link">
-                                <span className="text-link"> About
-                                    Us
-                                </span>
-                            </Link>
+                    <Link href="/about-us" className="nav_link">
+                        <span className="text-link"> About
+                            Us
+                        </span>
+                    </Link>
                     {/* <ul className="sub_menu">
                         <li className="menu-item nav-item">
                             <Link href="/about-us" className="nav_link">
@@ -110,29 +110,36 @@ export default function NavbarNav() {
                 <li className="menu-item menu-item-has-children dropdown  nav-item">
                     <Link href="#" className="nav_link">
                         <span className="text-link">
-                          Our  Services
+                            Our  Services
                         </span>
                     </Link>
                     <ul className="sub_menu">
                         <li className="menu-item nav-item">
                             <Link href="/medical-credentialing" className="nav_link">
                                 <span className="text-link">
-                                  Medical Credentialing
+                                    Medical Credentialing
                                 </span>
                             </Link>
                         </li>
                         <li className="menu-item nav-item">
                             <Link href="/medical-billing" className="nav_link">
                                 <span className="text-link">
-                                   Medical Billing/Revenue
-Cycle Management
+                                    Medical Billing/Revenue
+                                    Cycle Management
                                 </span>
                             </Link>
                         </li>
                         <li className="menu-item nav-item">
                             <Link href="/insurance" className="nav_link">
                                 <span className="text-link">
-                                   Insurance Contract Negotiations
+                                    Insurance Contract Negotiations
+                                </span>
+                            </Link>
+                        </li>
+                         <li className="menu-item nav-item">
+                            <Link href="/virtual-appointment" className="nav_link">
+                                <span className="text-link">
+                                  Virtual Appointment 
                                 </span>
                             </Link>
                         </li>
@@ -266,41 +273,33 @@ Cycle Management
                     <div className="dropdown-btn"><span className="fa fa-angle-down" /></div> */}
                 </li>
 
-        <li className="menu-item  menu-item-has-children dropdown  mennucolumn_two   nav-item">
-                    <Link href="/faqs" className="nav_link">
-                        <span className="text-link">
-                            FAQ’s
-                        </span>
-                    </Link>
-                   
-                    {/* <div className="dropdown-btn"><span className="fa fa-angle-down" /></div>  */}
-                </li>
+             
 
                 <li className="menu-item  menu-item-has-children dropdown  mennucolumn_  nav-item">
                     <Link href="/terms" className="nav_link">
                         <span className="text-link">
-                          Terms & Policies
+                            Terms & Policies
                         </span>
                     </Link>
                     <ul className="sub_menu">
                         <li className="menu-item nav-item">
                             <Link href="/terms" className="nav_link">
                                 <span className="text-link">
-                                   Terms & Conditions
+                                    Terms & Conditions
                                 </span>
                             </Link>
                         </li>
                         <li className="menu-item nav-item">
                             <Link href="/privacy" className="nav_link">
                                 <span className="text-link">
-                                  Privacy Policy
+                                    Privacy Policy
                                 </span>
                             </Link>
                         </li>
                         <li className="menu-item nav-item">
                             <Link href="/compliance" className="nav_link">
                                 <span className="text-link">
-                                Compliance
+                                    Compliance
                                 </span>
                             </Link>
                         </li>

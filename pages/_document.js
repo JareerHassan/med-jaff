@@ -5,10 +5,10 @@ export default function Document() {
         <Html lang="en">
             <Head />
             <link rel="shortcut icon" href="/assets/images/favicon.ico" />
-            <title>Vankine - Insurance & Consulting Business NextJS Template</title>
+            <title>Med-Jaff</title>
             <link rel="preconnect" href="https://fonts.bunny.net" />
             <link href="https://fonts.bunny.net/css?family=dm-sans:400,400i,500,500i,700,700i" rel="stylesheet" />
-            <body className='theme-vankine scrollbarcolor'>
+            <body className='Med-Jaff'>
                 <Main />
                 <NextScript />
             </body>
