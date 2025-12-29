@@ -1,5 +1,5 @@
 import Layout from "@/components/layout/Layout";
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import {
     User,
     Building2,
@@ -8,9 +8,47 @@ import {
     ChevronRight,
     CheckCircle2
 } from 'lucide-react'; // Suggested icons
+import emailjs from "emailjs-com";
+
 
 export default function Team() {
     const [currentStep, setCurrentStep] = useState(1);
+
+    const form = useRef();
+    const [loading, setLoading] = useState(false);
+    const [showSuccess, setShowSuccess] = useState(false);
+
+    const sendEmail = (e) => {
+        e.preventDefault(); // page reload na ho
+
+        setLoading(true);
+
+        emailjs.sendForm(
+            "service_phzeixp",
+            "template_er4zxdi",
+            form.current,
+            "YnUnp0MBrN-bhmakE"
+        ).then(
+            (result) => {
+                console.log(result.text);
+                setLoading(false);
+                setShowSuccess(true); // Success popup show
+
+                // Form fields clear kar do
+                form.current.reset();
+
+                // 4 seconds baad popup hide (optional)
+                setTimeout(() => {
+                    setShowSuccess(false);
+                }, 6000);
+            },
+            (error) => {
+                console.log(error.text);
+                setLoading(false);
+                alert("An error occurred, please try again.");
+            }
+        );
+    };
 
     const insuranceList = [
         "ACI Specialty Benefits", "Aetna", "Amerigroup", "AmeriHealth", "Anthem", "Banner Health",
@@ -46,7 +84,7 @@ export default function Team() {
                                 <h2 className="display-6 fw-bold text-dark">Provider/Facility Details</h2>
                             </div>
 
-                            <form className="enrollment-form bg-white p-4 p-md-5 rounded-4 shadow-sm border">
+                            <form ref={form} onSubmit={sendEmail} className="enrollment-form bg-white p-4 p-md-5 rounded-4 shadow-sm border">
 
                                 {/* --- Section 1: Personal Details --- */}
                                 <div className="form-section mb-5">
@@ -59,39 +97,39 @@ export default function Team() {
                                     <div className="row g-4">
                                         <div className="col-md-6">
                                             <label className="form-label small fw-bold text-uppercase text-muted">Full Name *</label>
-                                            <input type="text" className="form-control custom-input" placeholder="Legal Name" required />
+                                            <input type="text" name="full_name" className="form-control custom-input" placeholder="Legal Name" required />
                                         </div>
                                         <div className="col-md-3">
                                             <label className="form-label small fw-bold text-uppercase text-muted">SSN (Last 4)</label>
-                                            <input type="text" className="form-control custom-input" placeholder="0000" maxLength="4" />
+                                            <input type="text" name="ssn_last4" className="form-control custom-input" placeholder="0000" maxLength="4" />
                                         </div>
                                         <div className="col-md-3">
                                             <label className="form-label small fw-bold text-uppercase text-muted">Date of Birth</label>
-                                            <input type="date" className="form-control custom-input" />
+                                            <input type="date" name="dob" className="form-control custom-input" />
                                         </div>
                                         <div className="col-md-4">
                                             <label className="form-label small fw-bold text-uppercase text-muted">Percentage of Ownership</label>
-                                            <input type="text" className="form-control custom-input" placeholder="%" />
+                                            <input type="text" name="ownership_percentage" className="form-control custom-input" placeholder="%" />
                                         </div>
                                         <div className="col-md-4">
                                             <label className="form-label small fw-bold text-uppercase text-muted">NPPES username</label>
-                                            <input type="text" className="form-control custom-input" placeholder="NPPES username" />
+                                            <input type="text" name="nppes_username" className="form-control custom-input" placeholder="NPPES username" />
                                         </div>
                                         <div className="col-md-4">
                                             <label className="form-label small fw-bold text-uppercase text-muted">NPPES password</label>
-                                            <input type="text" className="form-control custom-input" placeholder="NPPES password" />
+                                            <input type="text" name="nppes_password" className="form-control custom-input" placeholder="NPPES password" />
                                         </div>
                                         <div className="col-md-4">
                                             <label className="form-label small fw-bold text-uppercase text-muted">Speciality</label>
-                                            <input type="text" className="form-control custom-input" placeholder="e.g. Cardiology" />
+                                            <input type="text" name="speciality" className="form-control custom-input" placeholder="e.g. Cardiology" />
                                         </div>
                                         <div className="col-md-4">
                                             <label className="form-label small fw-bold text-uppercase text-muted">Email Address</label>
-                                            <input type="email" className="form-control custom-input" placeholder="email@provider.com" />
+                                            <input type="email" name="provider_email" className="form-control custom-input" placeholder="email@provider.com" />
                                         </div>
                                         <div className="col-md-4">
                                             <label className="form-label small fw-bold text-uppercase text-muted">Cell No.</label>
-                                            <input type="tel" className="form-control custom-input" placeholder="+1..." />
+                                            <input type="tel" name="cell_no" className="form-control custom-input" placeholder="+1..." />
                                         </div>
                                     </div>
                                 </div>
@@ -107,59 +145,60 @@ export default function Team() {
                                     <div className="row g-4">
                                         <div className="col-md-12">
                                             <label className="form-label small fw-bold text-uppercase text-muted">Facility/Agency Name</label>
-                                            <input type="text" placeholder="Facility/Agency Name" className="form-control custom-input" />
+                                            <input type="text" name="facility_name" placeholder="Facility/Agency Name" className="form-control custom-input" />
                                         </div>
                                         <div className="col-md-6">
                                             <label className="form-label small fw-bold text-uppercase text-muted">Tax ID </label>
-                                            <input type="text" placeholder="Tax ID " className="form-control custom-input" />
+                                            <input type="text" name="tax_id" placeholder="Tax ID " className="form-control custom-input" />
                                         </div>
                                         <div className="col-md-6">
                                             <label className="form-label small fw-bold text-uppercase text-muted">NPI Type 1 (Individual)</label>
-                                            <input type="text" placeholder="NPI Type 1 (Individual)" className="form-control custom-input" />
+                                            <input type="text" name="npi_individual" placeholder="NPI Type 1 (Individual)" className="form-control custom-input" />
                                         </div>
                                         <div className="col-md-6">
                                             <label className="form-label small fw-bold text-uppercase text-muted">NPI Type 2 (group)</label>
-                                            <input type="text" placeholder="NPI Type 2 (group)" className="form-control custom-input" />
+                                            <input type="text" name="npi_group" placeholder="NPI Type 2 (group)" className="form-control custom-input" />
                                         </div>
                                         <div className="col-md-6">
                                             <label className="form-label small fw-bold text-uppercase text-muted">Primary Service Address</label>
-                                            <input type="text" placeholder="Primary Service Address" className="form-control custom-input" />
+                                            <input type="text" name="primary_address" placeholder="Primary Service Address" className="form-control custom-input" />
                                         </div>
                                         <div className="col-md-6">
                                             <label className="form-label small fw-bold text-uppercase text-muted">Pay to Address</label>
-                                            <input type="text" placeholder="Pay to Address" className="form-control custom-input" />
+                                            <input type="text" name="pay_to_address" placeholder="Pay to Address" className="form-control custom-input" />
                                         </div>
                                         <div className="col-md-6">
                                             <label className="form-label small fw-bold text-uppercase text-muted">Mailing Address</label>
-                                            <input type="text" placeholder="Mailing Address" className="form-control custom-input" />
+                                            <input type="text" name="mailing_address" placeholder="Mailing Address" className="form-control custom-input" />
                                         </div>
                                         <div className="col-md-6">
                                             <label className="form-label small fw-bold text-uppercase text-muted">Office Hours at location</label>
-                                            <input type="text" placeholder="Office Hours at location" className="form-control custom-input" />
+                                            <input type="text" name="office_hours" placeholder="Office Hours at location" className="form-control custom-input" />
                                         </div>
                                         <div className="col-md-6">
                                             <label className="form-label small fw-bold text-uppercase text-muted">Appointment Phone No.</label>
-                                            <input type="text" placeholder="Appointment Phone No." className="form-control custom-input" />
+                                            <input type="text" name="appointment_phone" placeholder="Appointment Phone No." className="form-control custom-input" />
                                         </div>
                                         <div className="col-md-6">
                                             <label className="form-label small fw-bold text-uppercase text-muted">Fax No.</label>
-                                            <input type="text" placeholder="Fax No." className="form-control custom-input" />
+                                            <input type="text" name="fax_no" placeholder="Fax No." className="form-control custom-input" />
                                         </div>
                                         <div className="col-md-6">
                                             <label className="form-label small fw-bold text-uppercase text-muted">Office Email </label>
-                                            <input type="text" placeholder="Office Email" className="form-control custom-input" />
+                                            <input type="text" name="office_email" placeholder="Office Email" className="form-control custom-input" />
                                         </div>
                                         <div className="col-md-6">
                                             <label className="form-label small fw-bold text-uppercase text-muted">Office Manager/Contact </label>
-                                            <input type="text" placeholder="Office Manager/Contact " className="form-control custom-input" />
+                                            <input type="text" name="office_manager" placeholder="Office Manager/Contact " className="form-control custom-input" />
                                         </div>
                                         <div className="col-md-6">
                                             <label className="form-label small fw-bold text-uppercase text-muted">CAQH logins</label>
-                                            <input type="text" placeholder="CAQH logins" className="form-control custom-input" />
+                                            <input type="text" name="caqh_logins" placeholder="CAQH logins" className="form-control custom-input" />
                                         </div>
                                     </div>
                                 </div>
 
+                                {/* --- Section 3: Document Uploads --- */}
                                 {/* --- Section 3: Document Uploads --- */}
                                 <div className="form-section mb-5">
                                     <div className="d-flex align-items-center mb-4">
@@ -171,71 +210,138 @@ export default function Team() {
                                     <h5>You can add anything else you’d like, but please make sure to include the IRS option — it’s required.</h5>
 
                                     <div className="row g-3">
-                                        {documentList.map((doc, index) => (
-                                            <div key={index} className="col-md-6">
-                                                <div className="upload-card">
-                                                    <div className="d-flex justify-content-between mb-2">
-                                                        <span className="fw-semibold small">{doc.label} {doc.required && <span className="text-danger">*</span>}</span>
-                                                        {doc.note && <span className="badge bg-soft-danger text-danger">{doc.note}</span>}
+                                        {documentList.map((doc, index) => {
+                                            // Label ko clean karke name banate hain (spaces aur special chars hata kar)
+                                            const fieldName = doc.label
+                                                .toLowerCase()
+                                                .replace(/[^a-z0-9]/g, '_')  // sab non-alphanumeric ko _ se replace
+                                                .replace(/_+/g, '_');        // multiple _ ko single kar do
+
+                                            return (
+                                                <div key={index} className="col-md-6">
+                                                    <div className="upload-card">
+                                                        <div className="d-flex justify-content-between mb-2">
+                                                            <span className="fw-semibold small">
+                                                                {doc.label} {doc.required && <span className="text-danger">*</span>}
+                                                            </span>
+                                                            {doc.note && <span className="badge bg-soft-danger text-danger">{doc.note}</span>}
+                                                        </div>
+                                                        <input
+                                                            type="file"
+                                                            name={fieldName}  // ← Yeh important hai EmailJS ke liye
+                                                            className="form-control form-control-sm"
+                                                            accept=".pdf,.jpg,.jpeg,.png,.doc,.docx"
+                                                        />
                                                     </div>
-                                                    <input type="file" className="form-control form-control-sm" />
                                                 </div>
-                                            </div>
-                                        ))}
+                                            );
+                                        })}
                                     </div>
                                 </div>
 
                                 {/* --- Section 4: Insurance Companies --- */}
-                                <div className="form-section mb-5">
-                                    <div className="d-flex align-items-center mb-4">
-                                        <div className="icon-box bg-info-light text-info me-3">
-                                            <ShieldCheck size={24} />
-                                        </div>
-                                        <h4 className="mb-0 fw-bold">4. Insurance Selection</h4>
-                                    </div>
+                              <div className="form-section mb-5">
+    <div className="d-flex align-items-center mb-4">
+        <div className="icon-box bg-info-light text-info me-3">
+            <ShieldCheck size={24} />
+        </div>
+        <h4 className="mb-0 fw-bold">4. Insurance Selection</h4>
+    </div>
 
-                                    <div className="insurance-grid-container p-3 border rounded-3 bg-light-subtle">
-                                        <div className="row g-2 overflow-auto" style={{ maxHeight: '350px' }}>
-                                            {insuranceList.map((item, index) => (
-                                                <div key={index} className="col-md-4 col-sm-6">
-                                                    <div className="insurance-check-card">
+    {/* Hidden field for EmailJS */}
+    <input type="hidden" name="selected_insurances" id="selected_insurances" />
 
-                                                        {/* Hidden Checkbox */}
-                                                        <input
-                                                            type="checkbox"
-                                                            className="btn-check"
-                                                            id={`ins-${index}`}
-                                                        />
+    <div className="insurance-grid-container p-3 border rounded-3 bg-light-subtle">
+        <div className="row g-2 overflow-auto" style={{ maxHeight: '350px' }}>
+            {insuranceList.map((item, index) => (
+                <div key={index} className="col-md-4 col-sm-6">
+                    <div className="insurance-check-card">
+                        <input
+                            type="checkbox"
+                            className="btn-check"
+                            id={`ins-${index}`}
+                            value={item}
+                            onChange={(e) => {
+                                const hiddenInput = document.getElementById('selected_insurances');
+                                let values = hiddenInput.value ? hiddenInput.value.split(' | ') : [];
 
-                                                        <label
-                                                            className="btn btn-outline-primary btn-sm w-100 text-start d-flex align-items-center"
-                                                            htmlFor={`ins-${index}`}
-                                                        >
-                                                            <CheckCircle2 size={14} className="me-2 icon-check" />
-                                                            <span className="text-truncate">{item}</span>
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            ))}
-                                        </div>
-                                    </div>
-                                </div>
+                                if (e.target.checked) {
+                                    if (!values.includes(item)) {
+                                        values.push(item);
+                                    }
+                                } else {
+                                    values = values.filter(v => v !== item);
+                                }
+
+                                hiddenInput.value = values.join(' | ');
+                            }}
+                        />
+                        <label
+                            className="btn btn-outline-primary btn-sm w-100 text-start d-flex align-items-center"
+                            htmlFor={`ins-${index}`}
+                        >
+                            <CheckCircle2 size={14} className="me-2 icon-check" />
+                            <span className="text-truncate">{item}</span>
+                        </label>
+                    </div>
+                </div>
+            ))}
+        </div>
+    </div>
+    </div>
 
 
                                 {/* --- Submit --- */}
                                 <div className="submit-area border-top pt-5 ">
 
-                                      <div className="col-md-12">
+                                    <div className="col-md-12">
                                         <p>Write Other Insurance Company that you want to be registered that are not mentioned in our list
-</p>
-<textarea></textarea>
-                                        </div>
-                                
-                                    <button type="submit" className="btn btn-primary btn-lg px-5 py-3 rounded-pill fw-bold shadow-lg d-inline-flex align-items-center">
-                                        Send <ChevronRight size={20} className="ms-2" />
+                                        </p>
+                                        <textarea
+                                            name="other_insurances"
+                                            rows="4"
+                                            className="form-control custom-input"
+                                            placeholder="Enter any other insurance companies..."
+                                        ></textarea>                                    </div>
+
+                                    <button
+                                        className="theme_btn"
+                                        type="submit"
+                                        disabled={loading} // Submit ke time disable
+                                        style={{
+                                            position: "relative",
+                                            zIndex: 9999,
+                                            opacity: loading ? 0.8 : 1,
+                                        }}
+                                    >
+                                        {loading ? (
+                                            <>
+                                                <span className="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+                                                Sending...
+                                            </>
+                                        ) : (
+                                            "Send"
+                                        )}
                                     </button>
                                 </div>
                             </form>
+                            {showSuccess && (
+                                <div className="position-fixed top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center" style={{ backgroundColor: "rgba(0,0,0,0.5)", zIndex: 9999 }}>
+                                    <div className="bg-white rounded shadow p-5 text-center" style={{ maxWidth: "500px", animation: "fadeIn 0.5s" }}>
+                                        <div className="mb-4">
+                                            <i className="fas fa-check-circle text-primary" style={{ fontSize: "60px" }}></i>
+                                        </div>
+                                        <h4 className="text-primary mb-3">Message Sent Successfully!</h4>
+                                        <p>Thank you for contacting us. We will get back to you shortly.</p>
+                                        <button
+                                            className="theme_btn mt-3"
+                                            onClick={() => setShowSuccess(false)}
+                                        >
+                                            Close
+                                        </button>
+                                    </div>
+                                </div>
+                            )}
                         </div>
                     </div>
                 </div>

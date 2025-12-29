@@ -31,8 +31,8 @@ export default function MobileMenu({ handleMobileMenu, isMobileMenu }) {
                                 <Link href="mailto:Medjaafsolutions@gmail.com" className="cnt">
                                     <i className="fi-rs-envelope" />Medjaafsolutions@gmail.com </Link>
                             </div>
-                            <div className="single-mobile-header-info">
-                                <Link href="/enrollment" className="theme_btn ">  Enrollment</Link>
+                            <div className="single-mobile-header-info" >
+                                <Link href="/enrollment" className="theme_btn " >  Enrollment</Link>
                             </div>
                            
                         </div>

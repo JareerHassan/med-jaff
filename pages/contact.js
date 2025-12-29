@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import Layout from "@/components/layout/Layout"
 import Link from "next/link"
 import emailjs from "emailjs-com";
@@ -6,22 +6,36 @@ import emailjs from "emailjs-com";
 export default function Contact() {
 
     const form = useRef();
+    const [loading, setLoading] = useState(false);
+    const [showSuccess, setShowSuccess] = useState(false);
 
     const sendEmail = (e) => {
         e.preventDefault(); // page reload na ho
 
+        setLoading(true);
+
         emailjs.sendForm(
-            "service_u7pfuks",
-            "template_hjrw59o",
+            "service_7fzik0i",
+            "template_p2bvc3b",
             form.current,
-            "mQdo9952t4gywGK5m"
+            "YnUnp0MBrN-bhmakE"
         ).then(
             (result) => {
                 console.log(result.text);
-                alert("Message sent successfully!");
+                setLoading(false);
+                setShowSuccess(true); // Success popup show
+
+                // Form fields clear kar do
+                form.current.reset();
+
+                // 4 seconds baad popup hide (optional)
+                setTimeout(() => {
+                    setShowSuccess(false);
+                }, 6000);
             },
             (error) => {
                 console.log(error.text);
+                setLoading(false);
                 alert("An error occurred, please try again.");
             }
         );
@@ -337,10 +351,25 @@ export default function Contact() {
 
                                                     <div className="col-sm-12">
                                                         <div className="form-group mg_top apbtn">
-                                                            <button style={{
-                                                                position: "relative",
-                                                                zIndex: 9999,
-                                                            }} className="theme_btn" type="submit">Get a Complementary Analysis</button>
+                                                            <button
+                                                                className="theme_btn"
+                                                                type="submit"
+                                                                disabled={loading} // Submit ke time disable
+                                                                style={{
+                                                                    position: "relative",
+                                                                    zIndex: 9999,
+                                                                    opacity: loading ? 0.8 : 1,
+                                                                }}
+                                                            >
+                                                                {loading ? (
+                                                                    <>
+                                                                        <span className="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+                                                                        Sending...
+                                                                    </>
+                                                                ) : (
+                                                                    "Get a Complementary Analysis"
+                                                                )}
+                                                            </button>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -351,6 +380,24 @@ export default function Contact() {
                             </div>
                         </div>
                     </div>
+                    {/* Success Popup Modal */}
+                    {showSuccess && (
+                        <div className="position-fixed top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center" style={{ backgroundColor: "rgba(0,0,0,0.5)", zIndex: 9999 }}>
+                            <div className="bg-white rounded shadow p-5 text-center" style={{ maxWidth: "500px", animation: "fadeIn 0.5s" }}>
+                                <div className="mb-4">
+                                    <i className="fas fa-check-circle text-primary" style={{ fontSize: "60px" }}></i>
+                                </div>
+                                <h4 className="text-primary mb-3">Message Sent Successfully!</h4>
+                                <p>Thank you for contacting us. We will get back to you shortly.</p>
+                                <button
+                                    className="theme_btn mt-3"
+                                    onClick={() => setShowSuccess(false)}
+                                >
+                                    Close
+                                </button>
+                            </div>
+                        </div>
+                    )}
                     <div className="ab_img_left_bottom z_0 mr_top_minus_150">
                         <img src="/assets/images/bg-1.png" className="img-fluid" alt="img" />
                     </div>
@@ -362,6 +409,13 @@ export default function Contact() {
 
 
             </Layout>
+
+            <style jsx>{`
+                @keyframes fadeIn {
+                    from { opacity: 0; transform: scale(0.9); }
+                    to { opacity: 1; transform: scale(1); }
+                }
+            `}</style>
         </>
     )
 }
