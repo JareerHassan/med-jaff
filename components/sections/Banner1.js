@@ -212,7 +212,7 @@ export default function Banner1() {
                                                 </button>
                                             </div>
                                         </div>
-                                        <div className="review_box d-flex gap-3 align-items-center mb-5">
+                                        <div className="review_box d-flex gap-3  align-items-center mb-5">
                                             {[
                                                 "https://speedycredentialing.com/wp-content/uploads/2025/05/Asset-7_.webp",
                                                 "https://vagabondtoursofireland.com/images-adventures/reviews/google-reviews.png",
@@ -227,7 +227,7 @@ export default function Banner1() {
                                     </div>
                                     <div className="col-lg-1" />
                                     <div className="col-lg-6">
-                                        <div className="image">
+                                        <div className="image d-none d-md-block">
                                             <img src={slide.image} className="img-fluid" alt="img" />
                                         </div>
                                     </div>

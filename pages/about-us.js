@@ -51,7 +51,7 @@ export default function AboutUs() {
                                             </svg>
                                         </Link>
                                     </div>
-                               
+
                                     <div className="fun_facts type_two">
                                         <h4>
 
@@ -61,7 +61,7 @@ export default function AboutUs() {
                                         <h6 className="title_no_a_26">Years Of
                                             Experience</h6>
                                     </div>
-                                         <div className="icon_box_only type_four position_two trans">
+                                    <div className="icon_box_only type_four position_two trans">
                                         <div className="icon">
                                             <img src="/assets/images/icon-image-2.png" alt="img" className="img-fluid" />
                                         </div>
@@ -448,7 +448,7 @@ export default function AboutUs() {
                                 {/*-============spacing==========-*/}
                                 <div className="pd_bottom_30" />
                                 {/*-============spacing==========-*/}
-                            
+
                                 {/*-============spacing==========-*/}
                                 <div className="pd_bottom_70" />
                                 {/*-============spacing==========-*/}
@@ -665,7 +665,7 @@ export default function AboutUs() {
 
                 {/*team*/}
                 {/*client*/}
-                <section className="client-section bg_light_1">
+                <section className="client-section ">
                     {/*-============spacing==========-*/}
                     <div className="pd_top_40" />
                     {/*-============spacing==========-*/}
@@ -681,37 +681,48 @@ export default function AboutUs() {
                                 </div>
                             </div>
                             <div className="col-lg-8 col-md-12">
-                                <div className="row">
-                                    <div className="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                                        <div className="iamge mr_bottom_20 mr_top_20">
-                                            <img src="/assets/images/new-images/1.png" className="img-fluid m-auto" alt="client" />
+                                <div className="row" style={{ margin: "-5px" }}>
+
+                                    <div className="col-6" style={{ padding: "5px" }}>
+                                        <div style={{ textAlign: "center" }}>
+                                            <img
+                                                src="/assets/images/new-images/img1.webp"
+                                                alt="client"
+                                                style={{ width: "220px", height: "auto" }}
+                                            />
                                         </div>
                                     </div>
-                                    <div className="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                                        <div className="iamge mr_bottom_20 mr_top_20">
-                                            <img src="/assets/images/new-images/2.png" className="img-fluid m-auto" alt="client" />
+
+                                    <div className="col-6" style={{ padding: "5px" }}>
+                                        <div style={{ textAlign: "center" }}>
+                                            <img
+                                                src="/assets/images/new-images/img4.webp"
+                                                alt="client"
+                                                style={{ width: "220px", height: "auto" }}
+                                            />
                                         </div>
                                     </div>
-                                    <div className="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                                        <div className="iamge mr_bottom_20 mr_top_20">
-                                            <img src="/assets/images/new-images/3.png" className="img-fluid m-auto" alt="client" />
+
+                                    <div className="col-6" style={{ padding: "5px" }}>
+                                        <div style={{ textAlign: "center" }}>
+                                            <img
+                                                src="/assets/images/new-images/img4.webp"
+                                                alt="client"
+                                                style={{ width: "220px", height: "auto" }}
+                                            />
                                         </div>
                                     </div>
-                                    <div className="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                                        <div className="iamge mr_bottom_20 mr_top_20">
-                                            <img src="/assets/images/new-images/4.png" className="img-fluid m-auto" alt="client" />
+
+                                    <div className="col-6" style={{ padding: "5px" }}>
+                                        <div style={{ textAlign: "center" }}>
+                                            <img
+                                                src="/assets/images/new-images/img2.webp"
+                                                alt="client"
+                                                style={{ width: "220px", height: "auto" }}
+                                            />
                                         </div>
                                     </div>
-                                    <div className="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                                        <div className="iamge mr_bottom_20 mr_top_20">
-                                            <img src="/assets/images/new-images/5.png" className="img-fluid m-auto" alt="client" />
-                                        </div>
-                                    </div>
-                                    <div className="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                                        <div className="iamge mr_bottom_20 mr_top_20">
-                                            <img src="/assets/images/new-images/6.png" className="img-fluid m-auto" alt="client" />
-                                        </div>
-                                    </div>
+
                                 </div>
                             </div>
                         </div>
