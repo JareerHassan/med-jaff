@@ -12,7 +12,7 @@
   --color-set-one-6:#36DB9F;
   --color-set-one-7:#082e5f;
   --color-set-one-8:#08254B;
-  --color-set-two-three-1:#2d947a;
+  --color-set-two-three-1:#00868c;
   --color-set-two-three-2:#263959;
   --color-set-two-three-3:#213438;
   --color-set-two-three-4:#1d3050;
@@ -14019,8 +14019,8 @@ input[type=range i]:hover::-webkit-slider-thumb, input[type=range i]:focus::-web
 /*------back-to-top------------*/
 .prgoress_indicator {
   position: fixed;
-  right: 50px;
-  bottom: 75px;
+  right: 25px;
+  bottom: 30px;
   height: 46px;
   width: 46px;
   cursor: pointer;

@@ -80,8 +80,8 @@ export default function About4() {
                             <div className="pd_bottom_35" />
                             {/*-============spacing==========-*/}
                             <div className="theme_btn_all">
-                                <Link href="#" className="theme_btn color_four big rotate">
-                                    Learn More <span> <i className=" fi-rr-arrow-small-up" /></span>
+                                <Link href="/about-us" className="theme_btn color_four big rotate">
+                                    About Us <span> <i className=" fi-rr-arrow-small-up" /></span>
                                 </Link>
                             </div>
                         </div>
