@@ -240,55 +240,55 @@ export default function Team() {
                                 </div>
 
                                 {/* --- Section 4: Insurance Companies --- */}
-                              <div className="form-section mb-5">
-    <div className="d-flex align-items-center mb-4">
-        <div className="icon-box bg-info-light text-info me-3">
-            <ShieldCheck size={24} />
-        </div>
-        <h4 className="mb-0 fw-bold">4. Insurance Selection</h4>
-    </div>
+                                <div className="form-section mb-5">
+                                    <div className="d-flex align-items-center mb-4">
+                                        <div className="icon-box bg-info-light text-info me-3">
+                                            <ShieldCheck size={24} />
+                                        </div>
+                                        <h4 className="mb-0 fw-bold">4. Insurance Selection</h4>
+                                    </div>
 
-    {/* Hidden field for EmailJS */}
-    <input type="hidden" name="selected_insurances" id="selected_insurances" />
+                                    {/* Hidden field for EmailJS */}
+                                    <input type="hidden" name="selected_insurances" id="selected_insurances" />
 
-    <div className="insurance-grid-container p-3 border rounded-3 bg-light-subtle">
-        <div className="row g-2 overflow-auto" style={{ maxHeight: '350px' }}>
-            {insuranceList.map((item, index) => (
-                <div key={index} className="col-md-4 col-sm-6">
-                    <div className="insurance-check-card">
-                        <input
-                            type="checkbox"
-                            className="btn-check"
-                            id={`ins-${index}`}
-                            value={item}
-                            onChange={(e) => {
-                                const hiddenInput = document.getElementById('selected_insurances');
-                                let values = hiddenInput.value ? hiddenInput.value.split(' | ') : [];
+                                    <div className="insurance-grid-container p-3 border rounded-3 bg-light-subtle">
+                                        <div className="row g-2 overflow-auto" style={{ maxHeight: '350px' }}>
+                                            {insuranceList.map((item, index) => (
+                                                <div key={index} className="col-md-4 col-sm-6">
+                                                    <div className="insurance-check-card">
+                                                        <input
+                                                            type="checkbox"
+                                                            className="btn-check"
+                                                            id={`ins-${index}`}
+                                                            value={item}
+                                                            onChange={(e) => {
+                                                                const hiddenInput = document.getElementById('selected_insurances');
+                                                                let values = hiddenInput.value ? hiddenInput.value.split(' | ') : [];
 
-                                if (e.target.checked) {
-                                    if (!values.includes(item)) {
-                                        values.push(item);
-                                    }
-                                } else {
-                                    values = values.filter(v => v !== item);
-                                }
+                                                                if (e.target.checked) {
+                                                                    if (!values.includes(item)) {
+                                                                        values.push(item);
+                                                                    }
+                                                                } else {
+                                                                    values = values.filter(v => v !== item);
+                                                                }
 
-                                hiddenInput.value = values.join(' | ');
-                            }}
-                        />
-                        <label
-                            className="btn btn-outline-primary btn-sm w-100 text-start d-flex align-items-center"
-                            htmlFor={`ins-${index}`}
-                        >
-                            <CheckCircle2 size={14} className="me-2 icon-check" />
-                            <span className="text-truncate">{item}</span>
-                        </label>
-                    </div>
-                </div>
-            ))}
-        </div>
-    </div>
-    </div>
+                                                                hiddenInput.value = values.join(' | ');
+                                                            }}
+                                                        />
+                                                        <label
+                                                            className="btn btn-outline-primary btn-sm w-100 text-start d-flex align-items-center"
+                                                            htmlFor={`ins-${index}`}
+                                                        >
+                                                            <CheckCircle2 size={14} className="me-2 icon-check" />
+                                                            <span className="text-truncate">{item}</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                </div>
 
 
                                 {/* --- Submit --- */}

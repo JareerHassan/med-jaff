@@ -529,13 +529,13 @@ export default function AboutUs() {
                             <div className="col-lg-6">
                                 <div className="section_title type_one">
                                     <div className="title_whole">
-                                        <h2 className="title">Why collaborate with Med Jaff?</h2>
+                                        <h2 className="title">Why collaborate with Med Jaaf?</h2>
                                     </div>
-                                    <p> At Med Jaff, we specialize in delivering top-tier medical billing and insurance credentialing services tailored to the unique needs of healthcare providers across the USA. With a focus on accuracy, speed, and reliability, we help practices thrive by simplifying complex processes and boosting operational efficiency.
+                                    <p> At Med Jaaf, we specialize in delivering top-tier medical billing and insurance credentialing services tailored to the unique needs of healthcare providers across the USA. With a focus on accuracy, speed, and reliability, we help practices thrive by simplifying complex processes and boosting operational efficiency.
 
                                         Our expert team understands the challenges of today’s healthcare landscape. That’s why we offer customized solutions that ensure smooth provider enrollments, fast-track credentialing, and maximize revenue potential. From solo practitioners to large healthcare networks, we’re here to support your success every step of the way.
 
-                                        Backed by years of experience and a commitment to excellence, Med Jaff is more than a service provider — we’re a strategic partner dedicated to helping you grow with confidence.</p>
+                                        Backed by years of experience and a commitment to excellence, Med Jaaf is more than a service provider — we’re a strategic partner dedicated to helping you grow with confidence.</p>
                                 </div>
                                 {/*-============spacing==========-*/}
                                 <div className="pd_bottom_40" />

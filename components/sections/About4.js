@@ -42,7 +42,7 @@ export default function About4() {
                                     <h2 className="title">Elevate Your Practice With Our Specialized Solutions</h2>
                                 </div>
                                 <p>
-                                 At med jaff we are committed to providing personalized support tailored to each individual’s unique needs. Our individual enrollment process is designed to be simple, confidential, and supportive from start to finish. Whether you’re seeking professional guidance, specialized services, or a customized plan to help you achieve your goals, our team is here to help. Anyone can enroll—there are no prerequisites or referrals required. To get started, simply complete our enrollment form with your basic information. Once submitted, a member of our team will contact you to schedule an initial consultation.
+                                 At Med Jaaf we are committed to providing personalized support tailored to each individual’s unique needs. Our individual enrollment process is designed to be simple, confidential, and supportive from start to finish. Whether you’re seeking professional guidance, specialized services, or a customized plan to help you achieve your goals, our team is here to help. Anyone can enroll—there are no prerequisites or referrals required. To get started, simply complete our enrollment form with your basic information. Once submitted, a member of our team will contact you to schedule an initial consultation.
                                 </p>
                             </div>
                             {/*-============spacing==========-*/}

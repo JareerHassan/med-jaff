@@ -332,7 +332,7 @@ export default function Contact() {
 
                                                     <div className="col-sm-12">
                                                         <p className="text-muted small pt-3">
-                                                            By texting START or initiating a conversation with (571) 281-8988, you consent to receive marketing text messages from Speedy Credentialing. Consent is not a condition of purchase. Message and data rates may apply. Message frequency varies. Unsubscribe at any time by replying STOP. Reply HELP for help.
+                                                            By texting START or initiating a conversation with +959 235 0229, you consent to receive marketing text messages from Speedy Credentialing. Consent is not a condition of purchase. Message and data rates may apply. Message frequency varies. Unsubscribe at any time by replying STOP. Reply HELP for help.
                                                             <a style={{
                                                                 position: "relative",
                                                                 zIndex: 9999,

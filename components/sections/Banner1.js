@@ -13,7 +13,7 @@ export default function Banner1() {
     const slides = [
         {
             title: "Streamline Your Credentialing Process with Speed, Accuracy, and Confidence",
-            description: "At Med Jaff, we specialize exclusively in delivering fast, reliable, and customized medical credentialing services to healthcare providers across the United States.",
+            description: "At Med Jaaf, we specialize exclusively in delivering fast, reliable, and customized medical credentialing services to healthcare providers across the United States.",
             image: "/assets/images/new-images/3img.webp"
         },
         {
@@ -23,7 +23,7 @@ export default function Banner1() {
         },
         {
             title: "Credentialing Solutions That Grow With You",
-            description: "Whether you're an independent provider launching your first practice or a growing healthcare group expanding into new states, Med Jaff adapts to your evolving needs. We manage everything from initial enrollment and multi-state licensing to payer re- credentialing and ongoing compliance — so you can scale with confidence.",
+            description: "Whether you're an independent provider launching your first practice or a growing healthcare group expanding into new states, Med Jaaf adapts to your evolving needs. We manage everything from initial enrollment and multi-state licensing to payer re- credentialing and ongoing compliance — so you can scale with confidence.",
             image: "/assets/images/new-images/5img.webp" // Replace with your 3rd image
         }
     ];
@@ -264,7 +264,7 @@ export default function Banner1() {
                             <i className="fa fa-phone"></i>
                             <div>
                                 <strong>Call Us</strong>
-                                <span>(571) 281-8988</span>
+                                <span>+959 235 0229</span>
                             </div>
                         </a>
 

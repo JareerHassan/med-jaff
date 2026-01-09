@@ -20,7 +20,7 @@ export default function PrivacyPolicy() {
                                     <p><strong>Contact:</strong> <a href="mailto:Medjaafsolutions@gmail.com">Medjaafsolutions@gmail.com</a></p>
 
                                     <p>
-                                        Med Jaff (“we,” “our,” or “us”) is dedicated to safeguarding your privacy and protecting your personal information. This Privacy Policy outlines the types of information we collect, how we use it, and the measures we take to ensure its security. By using our services, you agree to the terms of this Privacy Policy.
+                                        Med Jaaf (“we,” “our,” or “us”) is dedicated to safeguarding your privacy and protecting your personal information. This Privacy Policy outlines the types of information we collect, how we use it, and the measures we take to ensure its security. By using our services, you agree to the terms of this Privacy Policy.
                                     </p>
 
                                     <h6>1. Information Collection and Use</h6>

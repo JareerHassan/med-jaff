@@ -16,12 +16,12 @@ export default function TermsAndConditions() {
                             <div className="col-lg-12">
                                 <div className="terms-content">
                                     <p>
-                                        Welcome to Med Jaff website. By accessing or using this Site, you agree to comply with and be bound by these Terms and Conditions. If you do not agree with any part of these Terms, you must not use this Site.
+                                        Welcome to Med Jaaf website. By accessing or using this Site, you agree to comply with and be bound by these Terms and Conditions. If you do not agree with any part of these Terms, you must not use this Site.
                                     </p>
 
                                     <h6>Consent</h6>
                                     <p>
-                                        By submitting phone number in the contact us form or initiating a message to Med Jaff phone number, you consent to receive marketing messages from Med Jaff. Message and data rates may apply. Message frequency varies. Unsubscribe anytime by replying STOP. Reply HELP for help.
+                                        By submitting phone number in the contact us form or initiating a message to Med Jaaf phone number, you consent to receive marketing messages from Med Jaaf. Message and data rates may apply. Message frequency varies. Unsubscribe anytime by replying STOP. Reply HELP for help.
                                     </p>
 
                                     <h6>Changes to Terms</h6>
@@ -31,7 +31,7 @@ export default function TermsAndConditions() {
 
                                     <h6>Intellectual Property</h6>
                                     <p>
-                                        All content on this Site, including text, graphics, logos, images, audio clips, and software, is the property of Med Jaff and protected by intellectual property laws. You may not use, reproduce, distribute, modify, or create derivative works without our express written consent.
+                                        All content on this Site, including text, graphics, logos, images, audio clips, and software, is the property of Med Jaaf and protected by intellectual property laws. You may not use, reproduce, distribute, modify, or create derivative works without our express written consent.
                                     </p>
 
                                     <h6>Privacy</h6>
@@ -56,7 +56,7 @@ export default function TermsAndConditions() {
 
                                     <h6>Limitation of Liability</h6>
                                     <p>
-                                        To the fullest extent permitted by applicable law, Med Jaff shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits or revenues.
+                                        To the fullest extent permitted by applicable law, Med Jaaf shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits or revenues.
                                     </p>
 
                                     <h6>Governing Law</h6>
@@ -116,7 +116,7 @@ export default function TermsAndConditions() {
 
                                     <h6>Entire Agreement</h6>
                                     <p>
-                                        These Terms constitute the entire agreement between you and Med Jaff regarding the Site.
+                                        These Terms constitute the entire agreement between you and Med Jaaf regarding the Site.
                                     </p>
 
                                     <h6>Headings</h6>
