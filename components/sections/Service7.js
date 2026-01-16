@@ -92,7 +92,7 @@ export default function Service7() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                            {/* <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6">
                                 <div className="service_box type_seven trans color_two">
                                     <div className="icon trans">
                                         <svg width={110} height={130} viewBox="0 0 110 130" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -162,7 +162,7 @@ export default function Service7() {
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> */}
                             <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6">
                                 <div className="service_box type_seven trans color_two">
                                     <div className="icon trans">

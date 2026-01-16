@@ -176,7 +176,7 @@ export default function Banner1() {
                     <SwiperSlide key={index}>
                         <div className="content_box">
                             <div className="large-container">
-                                <div className="row align-items-center">
+                                <div className="row align-items-center mx-3">
                                     <div className="col-lg-5">
                                         <div className="section_title type_one">
                                             <div className="title_whole">

@@ -5,18 +5,8 @@ import MobileMenu from "./MobileMenu"
 import OptionalPanel from "./OptionalPanel"
 import SearchPopup from "./SearchPopup"
 import StickyHeader from "./StickyHeader"
-import Footer1 from './footer/Footer1'
-import Footer2 from "./footer/Footer2"
-import Footer3 from "./footer/Footer3"
 import Footer4 from "./footer/Footer4"
-import Footer5 from "./footer/Footer5"
-import Footer6 from "./footer/Footer6"
-import Header1 from './header/Header1'
-import Header2 from "./header/Header2"
-import Header3 from "./header/Header3"
 import Header4 from "./header/Header4"
-import Header5 from "./header/Header5"
-import Header6 from "./header/Header6"
 export default function Layout({ headerStyle, footerStyle, pageCls, breadcrumbTitle, children }) {
     // Search
     const [isSearch, setSearch] = useState(false)

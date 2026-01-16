@@ -15,7 +15,7 @@ export default function BlogCard1({ item }) {
                             {/* <Link href={`/blog/${item.id}`} className="cat_gry">Business Insurance</Link> */}
                             <span className="date_tm ">
                                 <i className="fi-rr-calendar" />
-                                <time className="date published" dateTime="2023-01-03T10:03:20+00:00">Jan 3, 2023</time>
+                                <time className="date published" dateTime="2023-01-03T10:03:20+00:00">Jan 1, 2026</time>
                             </span>
                         </div>
                         {/* <div className="d-flex authour align-items-center">
